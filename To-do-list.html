@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+</head>
+<style>
+    #mylist {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        color: black;
+        background-color: rgb(212, 247, 236);
+    }
+</style>
+
+<body>
+
+    <label for="things-to-do">Things to do</label>
+    <input type="text" id="things" name="chores"><br>
+    <br>
+    <button onclick="AddThings()">Submit</button>
+    <br><br>
+    <div>List of things
+        <div id="mylist">
+
+        </div>
+    </div>
+
+</body>
+<script src="to-do-list.js">
+</script>
+
+</html>
