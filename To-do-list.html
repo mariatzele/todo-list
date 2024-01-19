@@ -7,26 +7,142 @@
     <title>To-do-list</title>
 </head>
 <style>
+    html body {
+        margin: 0px;
+        padding: 0px;
+        color: #1D3557;
+        overflow: hidden;
+    }
+    
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 30vh;
+    }
+    
+    h1 {
+        display: flex;
+        align-self: center;
+    }
+    
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+    }
+    
+    .hero-container-items {
+        justify-content: center;
+        background-color: #A8DADC;
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 2em;
+        width: 80%;
+    }
+    
+    input[type=text],
+    select {
+        margin-right: 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    
+    #things {
+        padding: 0.75em;
+        border-radius: 1px solid black 10px;
+        width: 70vw;
+    }
+    
     #mylist {
         display: flex;
         flex-direction: column;
-        width: 50vw;
-        color: black;
-        background-color: rgb(212, 247, 236);
+        justify-content: space-around;
+        border-radius: 20px;
+        width: auto;
+        color: inherit;
+    }
+    
+    button {
+        padding: 1em;
+        width: 10em;
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        letter-spacing: 3px;
+        cursor: pointer;
+        background-color: #457B9D;
+        border: none;
+    }
+    
+    button :hover {
+        background-color: #E63946;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+        padding: 0.75em;
+        border-radius: 10px;
+        background-color: #F1FAEE;
+        width: auto;
+    }
+    
+    .span-delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2em;
+        height: 2em;
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        background-color: #E63946;
+        cursor: pointer;
+    }
+    
+    .row-container {
+        display: flex;
+        flex-direction: row;
     }
 </style>
 
 <body>
+    <div class="title">
+        <h1>Things I have to Do</h1>
+    </div>
+    <div class="hero-container">
+        <div class="hero-container-items">
+            <div class="row-container">
+                <br>
+                <input type="text" id="things" name="chores" placeholder="Thing you have to do"><br>
+                <br>
+                <button onclick="AddThings()">Submit</button>
+            </div>
+            <br><br>
+            <div>List of my Program
+                <br><br>
+                <div class="row-container" id="mylist">
+                    <!--------------------------------->
+                    <div class="container">
+                        <span>Hello</span>
+                        <div class="span-delete">x</div>
+                    </div>
+                    <!--------------------------------->
+                </div>
 
-    <label for="things-to-do">Things to do</label>
-    <input type="text" id="things" name="chores"><br>
-    <br>
-    <button onclick="AddThings()">Submit</button>
-    <br><br>
-    <div>List of things
-        <div id="mylist">
+            </div>
 
         </div>
+
+    </div>
     </div>
 
 </body>

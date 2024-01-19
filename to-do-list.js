@@ -4,19 +4,33 @@ const mylist = document.getElementById("mylist");
 function AddThings() {
     const thingsValue = things.value;
 
+    if (thingsValue.length == 0) {
+        console.log("Maria");
+        return
+    }
+
+    const div = document.createElement("div");
+    div.setAttribute("class", "container");
+
     const span = document.createElement("span");
     span.innerHTML = thingsValue;
-    span.onclick = (event) => {
-        Delete(event.target);
-    };
+    div.appendChild(span);
 
-    mylist.appendChild(span);
+    const del = document.createElement("div");
+    del.setAttribute("class", "span-delete");
+    del.onclick = () => {
+        Delete(div);
+    };
+    del.textContent = "x";
+    div.appendChild(del);
+
+    mylist.appendChild(div);
+
     things.value = "";
 }
 
 
 
-function Delete(span) {
-    console.log(span.innerHTML);
-    mylist.removeChild(span);
+function Delete(div) {
+    mylist.removeChild(div);
 }
