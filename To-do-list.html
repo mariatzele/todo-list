@@ -10,8 +10,23 @@
     html body {
         margin: 0px;
         padding: 0px;
-        color: #1D3557;
-        overflow: hidden;
+        color: #ffffff;
+        background-color: #1D3557;
+        z-index: auto;
+    }
+    
+    .hidden-point-finger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 100vh;
+    }
+    
+    .hidden-point-finger>img {
+        visibility: visible;
+        max-width: 30%;
+        height: auto;
     }
     
     .title {
@@ -40,7 +55,6 @@
     .hero-container-items {
         justify-content: center;
         background-color: #A8DADC;
-        border: 1px solid black;
         border-radius: 20px;
         padding: 2em;
         width: 80%;
@@ -56,7 +70,7 @@
     
     #things {
         padding: 0.75em;
-        border-radius: 1px solid black 10px;
+        border-radius: 1px solid 10px;
         width: 70vw;
     }
     
@@ -66,7 +80,7 @@
         justify-content: space-around;
         border-radius: 20px;
         width: auto;
-        color: inherit;
+        color: #1D3557;
     }
     
     button {
@@ -115,34 +129,34 @@
 </style>
 
 <body>
-    <div class="title">
-        <h1>Things I have to Do</h1>
+    <div id="finger-screen" class="hidden-point-finger">
+        <img id="transition" src="finger-pointing-at-you.png">
+        <button onclick="hide()">Do It</button>
     </div>
-    <div class="hero-container">
-        <div class="hero-container-items">
-            <div class="row-container">
-                <br>
-                <input type="text" id="things" name="chores" placeholder="Thing you have to do"><br>
-                <br>
-                <button onclick="AddThings()">Submit</button>
-            </div>
-            <br><br>
-            <div>List of my Program
+
+    <div id="main-screen">
+        <div class="title">
+            <h1>Things I have to Do</h1>
+        </div>
+        <div class="hero-container">
+            <div class="hero-container-items">
+                <div class="row-container">
+                    <br>
+                    <input type="text" id="things" name="chores" placeholder="Thing you have to do"><br>
+                    <br>
+                    <button onclick="AddThings()">Submit</button>
+                </div>
                 <br><br>
-                <div class="row-container" id="mylist">
-                    <!--------------------------------->
-                    <div class="container">
-                        <span>Hello</span>
-                        <div class="span-delete">x</div>
+                <div>List of my Program
+                    <br><br>
+                    <div class="row-container" id="mylist">
                     </div>
-                    <!--------------------------------->
+
                 </div>
 
             </div>
 
         </div>
-
-    </div>
     </div>
 
 </body>
