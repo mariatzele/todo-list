@@ -21,12 +21,39 @@
         align-items: center;
         background-color: black;
         height: 100vh;
+        position: relative;
+        width: 100%;
     }
     
     .hidden-point-finger>img {
         visibility: visible;
-        max-width: 30%;
+        max-width: 50%;
         height: auto;
+    }
+    
+    @media screen and (max-width: 500px) {
+        finger-button {
+            background-color: #E63946;
+            color: #e3e3e3;
+            width: 5em;
+            padding: 8px 10px;
+        }
+    }
+    
+    #finger-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #E63946;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
     }
     
     .title {
@@ -131,7 +158,7 @@
 <body>
     <div id="finger-screen" class="hidden-point-finger">
         <img id="transition" src="finger-pointing-at-you.png">
-        <button onclick="hide()">Do It</button>
+        <button id="finger-button" onclick="hide()">Do It</button>
     </div>
 
     <div id="main-screen">
