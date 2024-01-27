@@ -1,7 +1,11 @@
 const things = document.getElementById("things");
 const mylist = document.getElementById("mylist");
 
-let listItems = JSON.parse(localStorage.getItem("listItems"));
+let listItemsString = localStorage.getItem("listItems");
+let listItems = [];
+if (listItemsString != null) {
+    listItems = JSON.parse(listItemsString);
+}
 
 function renderList(list) {
     for (let i = 0; i < list.length; i++) {
